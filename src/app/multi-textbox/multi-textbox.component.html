@@ -1,0 +1,6 @@
+<div class="multiple_emails-container">
+  <div *ngFor="let value of values;let i = index" class="multiple_emails-email">
+    <div class="multiple_emails-close" (click)="deleteValue(i)" >x</div>
+    {{value}}</div>
+  <input type="text" (keyup)="onTextboxChange($event)" [(ngModel)]="inputValue">
+</div>
