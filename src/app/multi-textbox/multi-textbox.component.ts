@@ -16,9 +16,11 @@ export class MultiTextboxComponent implements OnInit {
   ngOnInit() {}
   onTextboxChange(e) {
     if (['enter', 'comma'].includes(e.code.toLowerCase())) {
-      console.log(this.inputValue);
-      let trim = this.inputValue.substring(0, this.inputValue.length - 1);
-      if (!trim) {
+      let trim = this.inputValue;
+      if(e.code.toLowerCase() == 'comma'){
+        trim = this.inputValue.substring(0, this.inputValue.length - 1);
+      }
+      if (!trim || trim.length == 0) {
         this.inputValue = '';
         return;
       }
